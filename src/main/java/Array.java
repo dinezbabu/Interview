@@ -8,7 +8,27 @@ public class Array {
     public static void main(String args[])
     {
         //PushanElementtoArray();
-        FindSecondLargest();
+        //FindSecondLargest();
+        SeperateAlpabetandSpecialchar();
+    }
+    public static void SeperateAlpabetandSpecialchar()
+    {
+        String str="OS#CH&*B^4!3";
+        String alphabet= "",specailchar="";
+        for(int i=0;i< str.length();i++)
+        {
+            if(Character.isLetterOrDigit(str.charAt(i)))
+            {
+                alphabet+=str.charAt(i);
+            }
+            else
+            {
+                specailchar+=str.charAt(i);
+            }
+        }
+        System.out.println("Alphabets are :"+alphabet);
+        System.out.println("Special Char are :"+specailchar);
+        System.out.println("Special Char length is :"+specailchar.length());
     }
     /*
          Insert an element in between the array
