@@ -1,15 +1,52 @@
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 /**
  * Created by dbabu on 2/18/19.
  */
 public class Array {
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         //PushanElementtoArray();
         //FindSecondLargest();
-        SeperateAlpabetandSpecialchar();
+        //SeperateAlpabetandSpecialchar();
+        //Palindrome();
+        reverseNumber();
+    }
+
+    public static void reverseNumber()
+    {
+        int num=9382712;
+        int reversenum=0;
+        for(;num!=0;) {
+            if (num != 0) {
+                reversenum = reversenum * 10;
+                reversenum = reversenum + num % 10;
+                num = num / 10;
+                System.out.print(reversenum);
+            }
+        }
+    }
+    public static boolean IsPalidrome(String str)
+    {
+        if(str.length()==0 || str.length()==1)
+            return true;
+        if(str.charAt(0)==str.charAt(str.length()-1))
+        {
+            return IsPalidrome(str.substring(1,str.length()-1));
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static void Palindrome()
+    {
+        String str="MALAYALAM";
+        if(IsPalidrome(str))
+            System.out.print("Given String "+str+" is Palindrome");
+        else
+            System.out.print("Given String "+str+" is not Palindrome");
     }
     public static void SeperateAlpabetandSpecialchar()
     {
@@ -26,6 +63,7 @@ public class Array {
                 specailchar+=str.charAt(i);
             }
         }
+        System.out.println(str.replaceAll("[^a-zA-Z0-9]",""));
         System.out.println("Alphabets are :"+alphabet);
         System.out.println("Special Char are :"+specailchar);
         System.out.println("Special Char length is :"+specailchar.length());
